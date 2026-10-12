@@ -1,0 +1,280 @@
+(footprint "Bosch_LGA-10_2x2mm_P0.5mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Bosch LGA-10, 2.0x2.0mm, pitch 0.5mm (BMP581). Land pattern según Fig. 32 de BST-BMP581-DS004-13: pads +25um por lado, sin máscara bajo el sensor (apertura 2.2x2.2mm), sin vías ni pistas debajo. https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp581-ds004.pdf")
+	(tags "Bosch LGA-10 2x2mm BMP581 barometer")
+	(property "Reference" "REF**"
+		(at 0 -2 0)
+		(layer "F.SilkS")
+		(uuid "022f1747-1e4a-4e4a-b2a6-d483818d165f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Bosch_LGA-10_2x2mm_P0.5mm"
+		(at 0 2 0)
+		(layer "F.Fab")
+		(uuid "44409a79-8ee2-4e25-9a65-263f50a91757")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp581-ds004.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d10c117a-e8d3-427c-8610-0236f218cc50")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "20cf6db5-2af7-4c7f-8d41-8fc014b7f6ed")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -1.1 -1.1)
+		(end 1.1 1.1)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Mask")
+		(uuid "3fcdcf99-294a-4a94-b199-c19dcb98e365")
+	)
+	(fp_line
+		(start -1.21 -1.21)
+		(end -1.56 -1.21)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ca188b65-1077-43b2-9588-664f20d5ce9e")
+	)
+	(fp_line
+		(start -1.21 -0.86)
+		(end -1.21 -1.21)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2c18479a-a00e-41d3-8747-92c9fc26a766")
+	)
+	(fp_line
+		(start -1.21 1.21)
+		(end -1.21 0.86)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0d2b66ad-f0d9-4c91-8fe0-05c7a37582d1")
+	)
+	(fp_line
+		(start -1.21 1.21)
+		(end -0.86 1.21)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9f5fbb73-f086-443f-8a91-58d9be5c351d")
+	)
+	(fp_line
+		(start 1.21 -1.21)
+		(end 0.86 -1.21)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e12f7203-4ae8-4733-91da-57df4f92b6b1")
+	)
+	(fp_line
+		(start 1.21 -1.21)
+		(end 1.21 -0.86)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "623cfead-3f00-4d61-8b34-8867ed84cf4a")
+	)
+	(fp_line
+		(start 1.21 1.21)
+		(end 0.86 1.21)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "22dc43b3-3b48-4318-b8c1-e1226ff1d7ac")
+	)
+	(fp_line
+		(start 1.21 1.21)
+		(end 1.21 0.86)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "177a2b53-bfa5-433b-ad26-66d80ca4de70")
+	)
+	(fp_rect
+		(start -1.25 -1.25)
+		(end 1.25 1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "241e2ed2-c35c-4e1f-8fc6-eea2c7e78594")
+	)
+	(fp_line
+		(start -1 -0.75)
+		(end -0.75 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6e6db82c-46f7-4ddd-82ef-602c0a17044e")
+	)
+	(fp_line
+		(start -1 1)
+		(end -1 -0.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "afe60097-898a-4910-8592-341e6397c602")
+	)
+	(fp_line
+		(start -0.75 -1)
+		(end 1 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "29ea7176-514b-493a-ba2a-72fa1df6f4d4")
+	)
+	(fp_line
+		(start 1 -1)
+		(end 1 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6139d035-b3d7-4514-98c1-98858ea752ad")
+	)
+	(fp_line
+		(start 1 1)
+		(end -1 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "bfb143b4-3e07-4094-932e-9da01e7114f7")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "8800160f-7c3d-4f7a-b50b-e4ec659d27aa")
+		(effects
+			(font
+				(size 0.4 0.4)
+				(thickness 0.06)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -0.7625 -0.25)
+		(size 0.325 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "665a21d2-0a25-4c65-a2db-a539daed1ee5")
+	)
+	(pad "2" smd rect
+		(at -0.7625 0.25)
+		(size 0.325 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "a7cb4df7-d43c-4501-b90e-a44d269ad915")
+	)
+	(pad "3" smd rect
+		(at -0.5 0.7625)
+		(size 0.3 0.325)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2910d92b-a8ab-412a-be58-0c79f656b057")
+	)
+	(pad "4" smd rect
+		(at 0 0.7625)
+		(size 0.3 0.325)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "cf303081-1566-48dd-b29c-d535088e668c")
+	)
+	(pad "5" smd rect
+		(at 0.5 0.7625)
+		(size 0.3 0.325)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "bec7a628-1469-4d05-8f9d-fb18b292bead")
+	)
+	(pad "6" smd rect
+		(at 0.7625 0.25)
+		(size 0.325 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "899fbb5b-da87-4013-8988-ed1c1c41f049")
+	)
+	(pad "7" smd rect
+		(at 0.7625 -0.25)
+		(size 0.325 0.3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "9d1b2bc0-d1bf-42f6-9133-0a08a77dc12f")
+	)
+	(pad "8" smd rect
+		(at 0.5 -0.7625)
+		(size 0.3 0.325)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "74102589-c4d1-4604-af4f-b0b5968aaf95")
+	)
+	(pad "9" smd rect
+		(at 0 -0.7625)
+		(size 0.3 0.325)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "3f607a11-4477-4a6b-b02a-2c9aef62d3de")
+	)
+	(pad "10" smd rect
+		(at -0.5 -0.7625)
+		(size 0.3 0.325)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "41f5400d-47c0-4c90-aecb-d37ef39785bd")
+	)
+	(embedded_fonts no)
+)
