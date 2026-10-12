@@ -12,8 +12,8 @@ kicad_libraries\                 ← ${SJ_KICAD_LIBS}
    ├─ footprints\SJ_<Cat>.pretty\
    ├─ 3dmodels\SJ_<Cat>.3dshapes\        (STEP/WRL en Git LFS)
    ├─ sym-lib-table, fp-lib-table        (categorías SJ; las anida el hub)
-   ├─ worksheets\SJ_A4.kicad_wks
-   ├─ templates\SJ_Project\              (plantilla de proyecto con BOM y campos SJ)
+   ├─ worksheets\SJ_Page.kicad_wks       (hoja de dibujo con el logo SJ)
+   ├─ templates\SJ_Project\              (plantilla de proyecto: BOM con campos SJ y jobset de fabricación)
    ├─ tools\validate_library.ps1         (valida formato, campos y huellas)
    ├─ tools\check_project_libs.ps1       (detecta librerías no permitidas en un proyecto)
    └─ docs\
@@ -34,6 +34,7 @@ kicad_libraries\                 ← ${SJ_KICAD_LIBS}
 | `SJ_Discrete` | Transistores, diodos y discretos específicos |
 | `SJ_Mechanical` | Huecos de montaje, pads de potencia, fiduciales |
 | `SJ_Module` | Módulos y placas hijas |
+| `SJ_Graphic` | Logos y gráficos de serigrafía (solo huellas) |
 | `SJ_Template` | Solo símbolos plantilla con los campos SJ (no se usa en esquemáticos) |
 
 ## Documentación

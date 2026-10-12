@@ -4,7 +4,8 @@ La base es la **KLC (KiCad Library Convention)**: https://klc.kicad.org. Son las
 
 ## 1. Organización
 
-- Una librería por categoría y tipo: `symbols/SJ_<Cat>.kicad_sym`, `footprints/SJ_<Cat>.pretty`, `3dmodels/SJ_<Cat>.3dshapes`. Las tres comparten el nombre `SJ_<Cat>`.
+- Una librería por categoría y tipo: `symbols/SJ_<Cat>.kicad_sym`, `footprints/SJ_<Cat>.pretty`, `3dmodels/SJ_<Cat>.3dshapes`. Las tres comparten el nombre `SJ_<Cat>`. Excepción: **`SJ_Graphic`** (logos de serigrafía) solo tiene huellas, nombradas `Logo_<Nombre>_<alto>mm_SilkScreen` y marcadas como fuera de BOM y de posiciones.
+- **Piezas que solo sirven para un proyecto** (por ejemplo, el contorno de un frame) no van a la librería: viven en `libs/<Proyecto>.pretty` dentro del propio proyecto, registradas en su `fp-lib-table` con `${KIPRJMOD}`.
 - Una categoría nueva se agrega en los tres sitios y en `sym-lib-table` / `fp-lib-table` de este repo. El hub la incluye sola.
 - **Las librerías estándar de KiCad nunca se copian ni se editan.** Si una pieza ya existe ahí, se referencia directamente; por ejemplo, `Connector_AMASS:AMASS_XT60-M_1x02_P7.20mm_Vertical`.
 - **Las librerías de fabricantes** (Espressif, etc.) se instalan con el PCM. Si una pieza de ellas necesita correcciones, se copia a `SJ_<Cat>` y se corrige ahí.
