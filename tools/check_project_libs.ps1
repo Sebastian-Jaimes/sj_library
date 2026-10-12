@@ -1,11 +1,12 @@
 ﻿<#
 .SYNOPSIS
-    Revisa que un proyecto personal solo use librerías permitidas: estándar de KiCad, SJ_* y PCM_*.
+    Revisa que un proyecto personal solo use librerías permitidas: estándar de KiCad, SJ_*, PCM_*
+    y las librerías locales del propio proyecto (tablas del proyecto con rutas ${KIPRJMOD}).
 
 .DESCRIPTION
     Recorre los .kicad_sch, .kicad_pcb y .kicad_pro del proyecto y lista:
       - símbolos (lib_id) y huellas (Footprint / footprint) de librerías no permitidas
-      - hojas de dibujo (page_layout_descr_file) fuera de ${SJ_KICAD_LIBS}/sj_library o de KiCad
+      - hojas de dibujo (page_layout_descr_file) fuera de ${SJ_KICAD_LIBS}/sj_library, de KiCad o del proyecto
     Devuelve código de salida 1 si encuentra algo no permitido.
 
 .EXAMPLE
@@ -26,7 +27,16 @@ $stock = @{}
 foreach ($n in (Get-TableNames (Join-Path $KicadShare 'template\sym-lib-table')) + (Get-TableNames (Join-Path $KicadShare 'template\fp-lib-table'))) { $stock[$n] = $true }
 if ($stock.Count -eq 0) { throw "No se encontraron las tablas estándar de KiCad en '$KicadShare'." }
 
-function Test-Allowed([string]$lib) { return $stock.ContainsKey($lib) -or $lib -like 'SJ_*' -or $lib -like 'PCM_*' }
+# Librerías locales del proyecto: solo las que viven dentro del proyecto (${KIPRJMOD})
+$local = @{}
+foreach ($tbl in 'sym-lib-table', 'fp-lib-table') {
+    $p = Join-Path $ProjectDir $tbl
+    if (Test-Path -LiteralPath $p) {
+        foreach ($m in [regex]::Matches((Get-Content -LiteralPath $p -Raw), '\(lib \(name "([^"]+)"\)\s*\(type "[^"]+"\)\s*\(uri "\$\{KIPRJMOD\}/[^"]*"\)')) { $local[$m.Groups[1].Value] = $true }
+    }
+}
+
+function Test-Allowed([string]$lib) { return $stock.ContainsKey($lib) -or $local.ContainsKey($lib) -or $lib -like 'SJ_*' -or $lib -like 'PCM_*' }
 
 $found = New-Object System.Collections.Generic.List[object]
 $files = Get-ChildItem -LiteralPath $ProjectDir -Recurse -File |
@@ -52,14 +62,14 @@ foreach ($f in $files) {
 foreach ($pro in Get-ChildItem -LiteralPath $ProjectDir -Filter '*.kicad_pro') {
     $j = Get-Content -LiteralPath $pro.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
     foreach ($ws in @($j.schematic.page_layout_descr_file, $j.pcbnew.page_layout_descr_file)) {
-        if ($ws -and $ws -notmatch '^\$\{SJ_KICAD_LIBS\}/sj_library/' -and $ws -notmatch '^\$\{KICAD\d+_TEMPLATE_DIR\}') {
+        if ($ws -and $ws -notmatch '^\$\{(SJ_KICAD_LIBS\}/sj_library/|KICAD\d+_TEMPLATE_DIR\}|KIPRJMOD\})') {
             $found.Add([pscustomobject]@{ Tipo = 'Hoja de dibujo'; Libreria = ($ws -replace '^\$\{([^}]+)\}.*', '$1'); Elemento = $ws; Archivo = $pro.Name })
         }
     }
 }
 
 if ($found.Count -eq 0) {
-    Write-Host 'OK: el proyecto solo usa librerías estándar de KiCad, SJ_* o PCM_*.' -ForegroundColor Green
+    Write-Host 'OK: el proyecto solo usa librerías estándar de KiCad, SJ_*, PCM_* o locales del proyecto.' -ForegroundColor Green
     exit 0
 }
 $found | Sort-Object Libreria, Elemento, Archivo -Unique | Format-Table -AutoSize
