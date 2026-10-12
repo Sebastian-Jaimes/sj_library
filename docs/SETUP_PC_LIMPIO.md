@@ -32,7 +32,10 @@ Solo en el PC de trabajo: crea también `hub\ms4m\sym-lib-table` y `hub\ms4m\fp-
 | Variable | Valor | Cuándo |
 |---|---|---|
 | `SJ_KICAD_LIBS` | `C:\Users\<usuario>\kicad_libraries` | Siempre |
-| `KICAD_USER_TEMPLATE_DIR` | `${SJ_KICAD_LIBS}\sj_library\templates` | Siempre (plantillas de proyecto) |
+| `KICAD_USER_TEMPLATE_DIR` | `C:\Users\<usuario>\kicad_libraries\sj_library\templates` | Siempre (plantillas de proyecto) |
+| `MS4M_TEMPLATE`, `MS4M_PROJECT_TEMPLATE` | rutas a `kicad_templates` y `dhw_project_template` | Solo trabajo |
+
+Las variables `KICAD10_*` las define KiCad y no se tocan. En esta tabla escribe siempre **rutas absolutas**, sin anidar otras variables. Las variables sí se usan dentro de las tablas de librerías y de las rutas 3D.
 | `MS4M_SYMBOL` | `C:\Users\<usuario>\kicad_libraries\dhw_symbols` | Solo trabajo |
 | `MS4M_FOOTPRINT` | `C:\Users\<usuario>\kicad_libraries\dhw_footprints` | Solo trabajo |
 | `MS4M_3DMOD` | `C:\Users\<usuario>\kicad_libraries\dhw_packages3d` | Solo trabajo |
