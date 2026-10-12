@@ -1,0 +1,13 @@
+sj_library - Librería KiCad de Sebastian Jaimes
+Copyright (c) 2026 Sebastian Jaimes
+
+Los símbolos, huellas y modelos 3D de este repositorio se distribuyen bajo la
+licencia Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Excepción (la misma que aplica la librería oficial de KiCad): para crear una
+obra no musical que use símbolos, huellas o modelos 3D de esta librería (por
+ejemplo, un esquemático, una PCB o un archivo de fabricación), no es necesario
+licenciar esa obra bajo CC BY-SA 4.0 ni atribuir al autor de la librería.
+
+Los scripts de tools/ y la documentación de docs/ se distribuyen bajo la licencia MIT.

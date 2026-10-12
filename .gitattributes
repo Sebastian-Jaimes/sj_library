@@ -1,0 +1,11 @@
+# Archivos de texto de KiCad con fin de línea LF (igual que la librería oficial)
+* text=auto eol=lf
+*.ps1 text eol=crlf
+
+# Modelos 3D en Git LFS
+*.step filter=lfs diff=lfs merge=lfs -text
+*.STEP filter=lfs diff=lfs merge=lfs -text
+*.stp  filter=lfs diff=lfs merge=lfs -text
+*.STP  filter=lfs diff=lfs merge=lfs -text
+*.wrl  filter=lfs diff=lfs merge=lfs -text
+*.WRL  filter=lfs diff=lfs merge=lfs -text

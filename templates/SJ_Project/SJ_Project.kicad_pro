@@ -1,0 +1,154 @@
+{
+  "board": {
+    "design_settings": {
+      "defaults": {},
+      "diff_pair_dimensions": [],
+      "drc_exclusions": [],
+      "rules": {},
+      "track_widths": [],
+      "via_dimensions": []
+    }
+  },
+  "boards": [],
+  "libraries": {
+    "pinned_footprint_libs": [],
+    "pinned_symbol_libs": []
+  },
+  "meta": {
+    "filename": "SJ_Project.kicad_pro",
+    "version": 1
+  },
+  "net_settings": {
+    "classes": [],
+    "meta": {
+      "version": 0
+    }
+  },
+  "pcbnew": {
+    "page_layout_descr_file": "${SJ_KICAD_LIBS}/sj_library/worksheets/SJ_A4.kicad_wks"
+  },
+  "sheets": [],
+  "text_variables": {
+    "AUTHOR": "Sebastian Jaimes",
+    "COMPANY": "",
+    "REVIEW": "",
+    "TITLE": "",
+    "VERSION": "0.1.0"
+  },
+  "schematic": {
+    "page_layout_descr_file": "${SJ_KICAD_LIBS}/sj_library/worksheets/SJ_A4.kicad_wks",
+    "bom_settings": {
+      "exclude_dnp": false,
+      "fields_ordered": [
+        {
+          "name": "Reference",
+          "label": "Reference",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Value",
+          "label": "Value",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "${QUANTITY}",
+          "label": "Qty",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "${DNP}",
+          "label": "DNP",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Footprint",
+          "label": "Footprint",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Datasheet",
+          "label": "Datasheet",
+          "show": false,
+          "group_by": false
+        },
+        {
+          "name": "Description",
+          "label": "Description",
+          "show": false,
+          "group_by": false
+        },
+        {
+          "name": "Manufacturer",
+          "label": "Manufacturer",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Mfg Part #",
+          "label": "Mfg Part #",
+          "show": true,
+          "group_by": true
+        },
+        {
+          "name": "LCSC Part #",
+          "label": "LCSC Part #",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Supplier",
+          "label": "Supplier",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Cost",
+          "label": "Cost",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Voltage",
+          "label": "Voltage",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Current",
+          "label": "Current",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "TC",
+          "label": "TC",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Power",
+          "label": "Power",
+          "show": true,
+          "group_by": false
+        },
+        {
+          "name": "Tol",
+          "label": "Tol",
+          "show": true,
+          "group_by": false
+        }
+      ],
+      "filter_string": "",
+      "group_symbols": true,
+      "include_excluded_from_bom": false,
+      "name": "",
+      "sort_asc": true,
+      "sort_field": "Reference"
+    }
+  }
+}
