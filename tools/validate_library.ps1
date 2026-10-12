@@ -5,8 +5,9 @@
 .DESCRIPTION
     1. kicad-cli sym/fp upgrade sobre cada librería (en una carpeta temporal; no modifica los originales).
     2. Exporta vistas previas SVG a out/preview/ (ignorada por git).
-    3. Verifica que cada símbolo de las librerías SJ_<Cat> tenga los 10 campos SJ
-       y una huella asignada que exista (en sj_library o en la librería estándar de KiCad).
+    3. Verifica que cada símbolo de las librerías SJ_<Cat> tenga los 10 campos SJ (vacíos: se
+       completan en la selección de componentes) y una huella asignada que exista
+       (en sj_library o en la librería estándar de KiCad).
     Devuelve código de salida 1 si hay errores.
 
 .EXAMPLE
@@ -73,7 +74,9 @@ try {
             $isDerived = $b -match '(?m)^\t\t\(extends "'
             $missing = $SjFields | Where-Object { -not $props.ContainsKey($_) }
             if ($missing -and -not $isDerived) { $errors.Add("[$($lib.BaseName):$sym] faltan campos: $($missing -join ', ')") }
-            if (-not $props['Mfg Part #'] -and -not $isDerived) { $warnings.Add("[$($lib.BaseName):$sym] 'Mfg Part #' vacío") }
+            # Los campos SJ se completan en la selección de componentes, no en la librería
+            $filled = $SjFields | Where-Object { $props[$_] }
+            if ($filled) { $warnings.Add("[$($lib.BaseName):$sym] campos SJ con valor en la librería (deberían ir vacíos): $($filled -join ', ')") }
             $fp = $props['Footprint']
             if (-not $fp) { if (-not $isDerived) { $errors.Add("[$($lib.BaseName):$sym] sin huella asignada") } }
             elseif (-not (Test-FootprintExists $fp)) { $errors.Add("[$($lib.BaseName):$sym] la huella '$fp' no existe en SJ ni en la librería estándar") }

@@ -11,9 +11,11 @@ La base es la **KLC (KiCad Library Convention)**: https://klc.kicad.org. Son las
 
 ## 2. Campos
 
-Campos propios, que **todo símbolo de `SJ_<Cat>` debe tener** aunque estén vacíos. `validate_library.ps1` lo comprueba.
+Campos propios. **Todo símbolo de `SJ_<Cat>` debe tenerlos, pero vacíos en la librería.** Son datos de la **selección de componentes**: se completan en el esquemático cuando se elige la pieza concreta, porque pueden cambiar (otro fabricante, otro proveedor, otro precio o el mismo componente con distinta tolerancia). `validate_library.ps1` comprueba que existan y avisa si alguno tiene valor.
 
-| Campo | Contenido | Ejemplo |
+La librería define **qué es** la pieza (símbolo, pinout, huella, datasheet, descripción). El esquemático define **cuál se compra**.
+
+| Campo (se llena en el esquemático) | Contenido | Ejemplo |
 |---|---|---|
 | `Manufacturer` | Fabricante | `Bosch Sensortec` |
 | `Mfg Part #` | **Número de parte del fabricante: identidad única de la pieza** | `BMP581` |
@@ -32,8 +34,8 @@ Para crear un símbolo nuevo, se copia `SJ_Template:SJ_IC_Template`, que ya trae
 
 ## 3. Símbolos
 
-- **Nombre:** el `Mfg Part #` base, sin sufijos de empaquetado (`BMP581`, `TPS54331`). Si hay variantes de encapsulado con distinto pinout, se agrega el encapsulado: `TPS54331_SOIC8`.
-- **Símbolos atómicos:** cada símbolo representa una pieza concreta, con su huella asignada y sus campos completos.
+- **Nombre:** el número de parte base, sin sufijo de embalaje (`R`/`T` de bobina), como hace KiCad. Si la pieza existe en varios encapsulados con distinto pinout o número de pines, se agrega el código de encapsulado del fabricante: `TPS54331DDA` (SO PowerPAD-8) frente a `TPS54331D` (SOIC-8). El número completo (`TPS54331DDAR`) se escribe en `Mfg Part #` durante la selección de componentes.
+- **Un símbolo por pieza y encapsulado:** cada símbolo tiene su pinout y su huella asignada; los campos SJ quedan vacíos.
 - **Pasivos genéricos (R, C, L):** se usan los de `Device` de la librería estándar. Los campos SJ se llenan en el esquemático, al final del diseño.
 - **Rejilla de 100 mil (2,54 mm)** para el origen de los pines, que van fuera del cuerpo.
 - **Disposición:** entradas a la izquierda, salidas a la derecha, alimentación arriba y GND abajo. Los pines se agrupan por función, no por número.
