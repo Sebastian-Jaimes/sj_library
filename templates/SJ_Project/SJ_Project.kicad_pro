@@ -25,7 +25,7 @@
     }
   },
   "pcbnew": {
-    "page_layout_descr_file": "${SJ_KICAD_LIBS}/sj_library/worksheets/SJ_A4.kicad_wks"
+    "page_layout_descr_file": "${SJ_KICAD_LIBS}/sj_library/worksheets/SJ_Page.kicad_wks"
   },
   "sheets": [],
   "text_variables": {
@@ -36,7 +36,7 @@
     "VERSION": "0.1.0"
   },
   "schematic": {
-    "page_layout_descr_file": "${SJ_KICAD_LIBS}/sj_library/worksheets/SJ_A4.kicad_wks",
+    "page_layout_descr_file": "${SJ_KICAD_LIBS}/sj_library/worksheets/SJ_Page.kicad_wks",
     "bom_settings": {
       "exclude_dnp": false,
       "fields_ordered": [
