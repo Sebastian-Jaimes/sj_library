@@ -39,7 +39,10 @@ Para crear un símbolo nuevo, se copia `SJ_Template:SJ_IC_Template`, que ya trae
 - **Un símbolo por pieza y encapsulado:** cada símbolo tiene su pinout y su huella asignada; los campos SJ quedan vacíos.
 - **Pasivos genéricos (R, C, L):** se usan los de `Device` de la librería estándar. Los campos SJ se llenan en el esquemático, al final del diseño.
 - **Rejilla de 100 mil (2,54 mm)** para el origen de los pines, que van fuera del cuerpo.
-- **Disposición:** entradas a la izquierda, salidas a la derecha, alimentación arriba y GND abajo. Los pines se agrupan por función, no por número.
+- **Disposición:** entradas a la izquierda, salidas a la derecha, alimentación arriba y GND abajo. Los pines se agrupan por función, no por número. Es una recomendación de la KLC; lo obligatorio es la rejilla, los tipos eléctricos y los pines apilados correctos.
+- **Pieza compatible con un símbolo oficial:** si la librería estándar de KiCad tiene una pieza **compatible pin a pin** (mismo encapsulado, mismos números y nombres de pin), se **copia su geometría exacta** (cuerpo y posición de cada pin) y solo se cambia la identidad: nombre, `Value`, `Description`, `Datasheet`, `ki_keywords`, campos SJ y, si el datasheet lo indica, el tipo eléctrico de algún pin. La disposición de arriba aplica a los símbolos que se dibujan desde cero. Así se aprovecha un diseño ya revisado por KiCad y un esquemático que usaba el símbolo oficial pasa al SJ con *Change Symbol* sin volver a rutear.
+  - Ejemplo: `SJ_Sensor:BMI270` es la geometría de `Sensor_Motion:BMI160` con la identidad, el datasheet y los tipos de pin del BMI270.
+  - Si la pieza es **idéntica** (mismo MPN), no se copia: se usa el símbolo oficial directamente.
 - **Nombres de pin:** los del datasheet. Las señales activas en bajo se marcan con `~{...}`, por ejemplo `~{RESET}`.
 - **Tipo eléctrico correcto** en cada pin: `power_in`, `input`, `output`, `bidirectional`, `passive`, etc. Es lo que hace útil el ERC.
 - `Reference` con el prefijo estándar: U, J, D, Q, R, C, L, Y, SW, BZ, FB, TP, H.

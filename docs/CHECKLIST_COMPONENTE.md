@@ -20,7 +20,8 @@ Se busca en este orden y se usa la primera fuente que exista:
 
 ## 2. Símbolo (`SJ_<Cat>`)
 
-- [ ] Copiado de `SJ_Template:SJ_IC_Template` y renombrado con el número de parte base (+ código de encapsulado si aplica).
+- [ ] Si existe un símbolo oficial **compatible pin a pin**, se copia su geometría exacta y solo se cambia la identidad (ver CONVENCIONES §3). Si no, se copia `SJ_Template:SJ_IC_Template` y se dibuja con la disposición estándar.
+- [ ] Renombrado con el número de parte base (+ código de encapsulado si aplica).
 - [ ] Todos los pines del datasheet presentes, con número y nombre correctos.
 - [ ] Tipo eléctrico correcto en cada pin; los NC marcados como `no_connect`.
 - [ ] Disposición: entradas a la izquierda, salidas a la derecha, alimentación arriba y GND abajo, sobre la rejilla de 100 mil.
