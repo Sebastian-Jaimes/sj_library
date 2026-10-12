@@ -11,4 +11,5 @@
 	(lib (name "SJ_Discrete") (type "KiCad") (uri "${SJ_KICAD_LIBS}/sj_library/footprints/SJ_Discrete.pretty") (options "") (descr "Transistores, diodos y discretos específicos"))
 	(lib (name "SJ_Mechanical") (type "KiCad") (uri "${SJ_KICAD_LIBS}/sj_library/footprints/SJ_Mechanical.pretty") (options "") (descr "Huecos de montaje, pads de potencia, fiduciales"))
 	(lib (name "SJ_Module") (type "KiCad") (uri "${SJ_KICAD_LIBS}/sj_library/footprints/SJ_Module.pretty") (options "") (descr "Módulos y placas hijas"))
+	(lib (name "SJ_Graphic") (type "KiCad") (uri "${SJ_KICAD_LIBS}/sj_library/footprints/SJ_Graphic.pretty") (options "") (descr "Logos y gráficos de serigrafía"))
 )
